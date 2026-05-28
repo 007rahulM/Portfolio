@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: 0 0% 98%;
+  --surface: 0 0% 100%;
+  --muted: 215 16% 47%;
+  --text: 222 47% 11%;
+  --accent: 173 80% 43%;
+  --border: 214 32% 91%;
+}
+
+.dark {
+  --bg: 0 0% 4%;
+  --surface: 0 0% 7%;
+  --muted: 215 20% 65%;
+  --text: 210 40% 96%;
+  --accent: 173 80% 43%;
+  --border: 220 20% 18%;
+}
+
+* {
+  @apply border-border;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-bg font-sans text-text antialiased;
+}
+
+::selection {
+  background: hsl(var(--accent) / 0.35);
+}
+
+.prose-custom {
+  @apply max-w-none text-text;
+}
+
+.prose-custom h1,
+.prose-custom h2,
+.prose-custom h3 {
+  @apply mt-8 text-text;
+}
+
+.prose-custom p,
+.prose-custom li {
+  @apply text-base leading-7 text-text/85;
+}
+
+.prose-custom pre {
+  @apply overflow-x-auto rounded-xl border border-border bg-surface p-4;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

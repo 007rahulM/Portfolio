@@ -1,0 +1,19 @@
+import { About } from "@/components/sections/about";
+import { Contact } from "@/components/sections/contact";
+import { Hero } from "@/components/sections/hero";
+import { OpenSource } from "@/components/sections/open-source";
+import { Projects } from "@/components/sections/projects";
+import { Skills } from "@/components/sections/skills";
+
+export default function Home() {
+  return (
+    <>
+      <Hero />
+      <About />
+      <Projects />
+      <Skills />
+      <OpenSource />
+      <Contact />
+    </>
+  );
+}

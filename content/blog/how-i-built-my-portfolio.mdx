@@ -1,0 +1,39 @@
+---
+title: How I built my portfolio — a backend developer's honest guide to learning the frontend
+date: 2026-05-28
+description: What changed when I stopped treating frontend as decoration and started treating it as product engineering.
+tags:
+  - nextjs
+  - typescript
+  - frontend
+---
+
+When I started coding, backend felt natural to me. Routes, auth flows, DB indexes, and API contracts gave me confidence because everything had structure.
+
+Frontend felt fuzzy. Too many decisions, too much styling, and not enough obvious architecture.
+
+This portfolio changed that.
+
+## What made the shift easier
+
+- **Next.js App Router** gave me clear file-based structure.
+- **TypeScript** made component contracts feel like API contracts.
+- **Tailwind** removed the CSS context-switching tax.
+- **Framer Motion** helped me add motion with intention, not noise.
+
+## Biggest mindset upgrade
+
+I stopped asking, _"How do I make this look cool?"_ and started asking, _"How does this interaction help the user complete a goal?"_
+
+```ts
+export function isClientReady(mounted: boolean) {
+  return mounted;
+}
+```
+
+That one hydration-safe pattern solved most of my localStorage + theme bugs.
+
+## Final thought
+
+If you're a backend developer learning frontend, don't chase perfection.
+Ship components. Refactor. Learn from your own rough edges.
