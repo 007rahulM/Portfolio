@@ -10,12 +10,14 @@ export function ProjectCard({
   description,
   stack,
   repo,
+  live,
   year,
 }: {
   title: string;
   description: string;
   stack: string[];
   repo: string;
+  live?: string;
   year?: string;
 }) {
   return (
@@ -30,12 +32,16 @@ export function ProjectCard({
           <Tag key={item}>{item}</Tag>
         ))}
       </div>
-      <Link
-        href={repo}
-        className="text-sm font-medium text-accent hover:underline"
-      >
-        View repository
-      </Link>
+      <div className="flex flex-wrap gap-4 text-sm font-medium">
+        <Link href={repo} className="text-accent hover:underline">
+          View repository
+        </Link>
+        {live ? (
+          <Link href={live} className="text-accent hover:underline">
+            Live demo
+          </Link>
+        ) : null}
+      </div>
     </Card>
   );
 }
@@ -51,8 +57,8 @@ export function ProjectsSection() {
         </p>
         <h2 className="text-3xl font-display font-semibold">Projects</h2>
         <p className="max-w-2xl text-muted">
-          A focused set of products and experiments that highlight API
-          architecture, automation, and full-stack delivery.
+          Pinned repositories that highlight API architecture, automation, and
+          full-stack delivery.
         </p>
       </div>
       <div className="grid gap-6 md:grid-cols-3">
@@ -63,6 +69,7 @@ export function ProjectsSection() {
             description={project.description}
             stack={project.stack ?? []}
             repo={project.repo}
+            live={project.live ?? undefined}
             year={project.year}
           />
         ))}

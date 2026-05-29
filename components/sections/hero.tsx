@@ -33,8 +33,8 @@ export function Hero() {
           </Link>
         </div>
         <p className="text-sm text-muted">
-          Based in {siteConfig.location}. Focused on building APIs that scale and
-          frontends that feel intentional.
+          Based in {siteConfig.location}. A builder focused on systems that
+          scale and interfaces that feel intentional.
         </p>
       </div>
       <div className="flex justify-center md:justify-end">

@@ -10,8 +10,8 @@ export function ContactSection() {
         <p className="text-sm uppercase tracking-[0.3em] text-muted">Contact</p>
         <h2 className="text-3xl font-display font-semibold">Let&apos;s build</h2>
         <p className="max-w-2xl text-muted">
-          Reach out for backend architecture, API design, or full-stack builds.
-          I&apos;m open to collaborations and impactful product work.
+          Reach out for backend architecture, AI integrations, or full-stack
+          builds. I&apos;m open to collaborations and impactful product work.
         </p>
       </div>
       <div className="flex flex-wrap gap-3">

@@ -3,7 +3,7 @@ import type { NavItem, SkillGroup } from "@/types";
 export const siteConfig = {
   name: "Rahul M",
   title:
-    "Backend engineer who architects APIs, integrates AI, and is becoming a full-stack developer one component at a time.",
+    "Backend engineer who architects APIs, integrates AI, and is learning to make them beautiful too — one component at a time.",
   location: "Bengaluru, India",
   email: "rk096327945@gmail.com",
   github: "https://github.com/007rahulM",
@@ -32,7 +32,7 @@ export const skillGroups: SkillGroup[] = [
   },
   {
     title: "Product Tools",
-    items: ["Cloudinary", "Vercel", "Tailwind CSS"],
+    items: ["Cloudinary", "Vercel", "Tailwind CSS", "Framer Motion"],
   },
   {
     title: "Applied AI",
