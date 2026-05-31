@@ -1,22 +1,41 @@
 # 03 — TypeScript Essentials
 
-TypeScript adds types on top of JavaScript so refactors are safer and components are easier to understand.
+## Goal of this lesson
 
-## How it shows up in this repo
+Understand **why TypeScript exists** and how it makes this codebase easier to read, safer to refactor, and clearer to extend.
 
-- **Props are typed** (example: `components/ui/button.tsx`)
-- **Config data uses types** (`lib/site.ts` imports `NavItem`, `SkillGroup`)
-- **Next.js metadata is typed** (`app/layout.tsx` uses `Metadata`)
+## Mental model: Types describe shape and intent
 
-## Principles to follow
+Think of TypeScript as documentation the computer can verify:
 
-- Type public APIs (props, config objects, exported functions).
-- Prefer narrow string unions for variants (see `button.tsx`).
-- Let the compiler guide your changes — fix errors in order.
+- It tells you **what data should look like**.
+- It warns you when you use data incorrectly.
+- It makes large refactors safe because the compiler checks your work.
 
-## Why this matters
+## Core ideas you must understand
 
-The portfolio is small today, but TypeScript makes it **safe to scale**:
+1. **Types vs values**  
+   Types describe data; values are the data. `string` is a type. `"hello"` is a value.
 
-- You can add new sections without breaking old ones.
-- You can rename props and be confident every usage updates.
+2. **Interfaces and type aliases**  
+   Use these to describe objects and component props.
+
+3. **Unions**  
+   Helpful for variants like `"primary" | "secondary"` for buttons.
+
+4. **Inference**  
+   TypeScript often figures types out for you. You only need to add types at the boundaries.
+
+## Where TypeScript shows up in this repo
+
+- **Component props** are typed in UI components (example: `components/ui/button.tsx`).
+- **Config data** is typed in `lib/site.ts` using types from `types/index.ts`.
+- **Metadata** is typed in `app/layout.tsx` using Next.js `Metadata`.
+
+## How to think while coding
+
+- **Type the boundaries**: props, exported functions, and config objects.
+- **Let the compiler guide you**: fix errors in order, don’t fight the types.
+- **Read types to understand code**: if you don’t know what a function expects, look at its type.
+
+If you can explain the types of a component’s props, you already understand 80% of that component.

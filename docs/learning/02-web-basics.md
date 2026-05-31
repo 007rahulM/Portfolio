@@ -1,31 +1,47 @@
 # 02 — Web Fundamentals
 
-Before jumping into frameworks, make sure these basics are clear.
+## Goal of this lesson
 
-## The request/response loop
+Make sure you understand **how the web works** before you dive into Next.js. Frameworks only make sense when the fundamentals are clear.
 
-1. Browser requests a URL.
-2. Server returns HTML, CSS, JS.
-3. Browser parses HTML, applies CSS, runs JS.
+## The request/response loop (the real story)
 
-## Rendering concepts
+1. **You type a URL.**
+2. **The browser makes a request** (HTTP) to a server.
+3. **The server responds** with HTML, CSS, and JavaScript.
+4. **The browser renders** the HTML, applies CSS, then runs JavaScript.
 
-- **Server‑side rendering (SSR)**: HTML is generated on the server.
-- **Client‑side rendering (CSR)**: HTML is built in the browser.
-- **Static generation (SSG)**: HTML is prebuilt at build time.
+If you can explain this loop, you can debug most web problems.
 
-Next.js combines all three depending on the page.
+## Rendering concepts (why Next.js exists)
 
-## Component thinking
+- **Server‑side rendering (SSR)**  
+  The HTML is created on the server for every request. Good for dynamic data.
 
-Modern UI is built from **components** — small, reusable building blocks with clear props and responsibilities. This portfolio keeps:
+- **Client‑side rendering (CSR)**  
+  The server sends a minimal HTML shell and JavaScript builds the UI in the browser.
+
+- **Static generation (SSG)**  
+  The HTML is built once at build time and reused for every visitor.
+
+Next.js combines all three, so each page can choose the best method.
+
+## The idea of “components”
+
+Modern UI is built from **components** — small, reusable pieces that take data (props) and return UI.
+
+In this repo:
 
 - layout pieces (Navbar/Footer)
 - content sections (Hero/Projects/Skills)
 - UI primitives (Button/Card/Tag)
 
-When you build your own, always ask:
+## How to think like a builder
 
-- What should be a reusable component?
-- What data should flow in as props?
-- What should be fixed vs configurable?
+When you see a page, ask yourself:
+
+1. What parts repeat and should become components?
+2. What data changes? (that becomes props or content)
+3. What never changes? (that becomes layout)
+
+This mindset is how you go from “copying code” to **designing code**.

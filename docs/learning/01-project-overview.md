@@ -1,12 +1,18 @@
 # 01 — Project Overview
 
-This portfolio is built like a product:
+## Goal of this lesson
 
-- **Next.js 14 App Router** for routing and rendering
-- **TypeScript** for reliability and safer refactors
-- **Tailwind CSS** for consistent design tokens
-- **Framer Motion** for UI polish
-- **Contentlayer + MDX** for blog/project content
+Understand **what this portfolio is**, **what it includes**, and **how the code is organized** so you always know where to look before you edit anything.
+
+## Mental model: 3 layers
+
+Think of this project as three clear layers:
+
+1. **Content** — blog posts and projects written in MDX.
+2. **UI** — reusable components and page sections.
+3. **Routes** — Next.js pages that stitch content + UI together.
+
+When something looks wrong on the website, your job is to trace which layer is responsible.
 
 ## What the site includes
 
@@ -14,19 +20,31 @@ This portfolio is built like a product:
 - **Projects page** (`app/projects/page.tsx`) driven by MDX content
 - **Blog index + post pages** (`app/blog/page.tsx`, `app/blog/[slug]/page.tsx`)
 
-## Where key logic lives
+## Where key logic lives (and why)
 
-- **App routes**: `app/`
-- **Reusable sections**: `components/sections/`
-- **Shared UI**: `components/ui/`
-- **MDX rendering**: `components/shared/mdx.tsx`
-- **Site config + data**: `lib/site.ts`
-- **Fonts & utilities**: `lib/fonts.ts`, `lib/utils.ts`
-- **Content schemas**: `contentlayer.config.ts`
-- **Content**: `content/blog/` + `content/projects/`
+- **App routes** → `app/`  
+  Each folder is a page. A `page.tsx` file equals a URL.
+- **Reusable sections** → `components/sections/`  
+  Each homepage section is isolated so it can be changed without breaking the page.
+- **Shared UI** → `components/ui/`  
+  Buttons, cards, tags, and badges are centralized for consistency.
+- **MDX rendering** → `components/shared/mdx.tsx`  
+  This is where Markdown tags are turned into styled React components.
+- **Site config + data** → `lib/site.ts`  
+  All static data (name, links, skills) lives here so it is easy to edit.
+- **Fonts & utilities** → `lib/fonts.ts`, `lib/utils.ts`  
+  Fonts define typography; utilities keep class names clean.
+- **Content schemas** → `contentlayer.config.ts`  
+  Defines what fields every post/project must include.
+- **Content** → `content/blog/`, `content/projects/`  
+  The actual MDX files you edit to add or update content.
 
-## Why this structure works
+## How to read this repo (the safe order)
 
-- **Separation of concerns**: content lives in MDX, layout in components, config in `lib/`.
-- **Scalability**: you can add new pages or content without rewriting core logic.
-- **Teaching‑friendly**: each layer of the stack is explicit and discoverable.
+1. Start in `app/` to see the pages and layout.
+2. Follow the imports into `components/sections/` to see the UI pieces.
+3. Check `lib/site.ts` to see what data powers those components.
+4. Open `contentlayer.config.ts` to understand content rules.
+5. Read the MDX files in `content/` to see real content.
+
+If you can explain the purpose of every folder above, you have the full mental model.

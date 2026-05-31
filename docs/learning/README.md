@@ -1,6 +1,16 @@
 # Learning Path
 
-This section teaches the **concepts behind the project** — from web fundamentals to the exact stack used here.
+This section teaches the **concepts behind the project**. Each page is written to help you build the mental model first, then map that model to the code.
+
+## How to read these lessons
+
+For every lesson:
+
+1. **Learn the idea** (what problem it solves).
+2. **Connect it to the repo** (which files use it).
+3. **Explain the code** (what each part is doing and why).
+
+If you already know a topic, skim it — but still read the “Where it shows up in this repo” sections. That’s how you learn structure, not just theory.
 
 ## Recommended order
 
@@ -15,4 +25,4 @@ This section teaches the **concepts behind the project** — from web fundamenta
 9. [Framer Motion](./09-framer-motion.md)
 10. [Performance + SEO](./10-performance-seo.md)
 
-If you already know a topic, skim it and move to the next.
+By the time you finish these lessons, you should be able to **describe every major folder in the repo and why it exists**.
